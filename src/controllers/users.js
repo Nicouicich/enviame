@@ -2,7 +2,7 @@ import { createUserDB,getAllUsersDB } from "../persistence/user";
 
 export const getAllUsers = async (req, res) => {
   let users = await getAllUsersDB()
-  console.log(users)
+  console.log(users[0])
   res.status(200).json({
     data: users
   })

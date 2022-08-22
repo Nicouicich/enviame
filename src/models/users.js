@@ -8,7 +8,10 @@ module.exports = (sequelize,type ) => {
     name:type.STRING,
     email: type.STRING,
     password: type.STRING,
-    is_admin: type.BOOLEAN,
+    is_admin: {
+      type:type.BOOLEAN,
+      defaultValue:false
+    },
     
 
   },{timestamps: false})
