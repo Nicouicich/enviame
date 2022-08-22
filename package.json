@@ -1,0 +1,30 @@
+{
+  "name": "enviame",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "transpile": "babel src --out-dir dist",
+    "start": "npm run reactBuild && npm run transpile && node ./dist/index.js",
+    "dev": "nodemon --exec babel-node ./src/index.js",
+    "reactBuild": "npm run build --prefix ./src/client",
+    "webpack": "webpack --mode development"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.18.10",
+    "@babel/node": "^7.18.10",
+    "nodemon": "^2.0.19"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.18.10",
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3",
+    "Router": "^2.1.0",
+    "sequelize": "^6.21.4"
+  }
+}
+
