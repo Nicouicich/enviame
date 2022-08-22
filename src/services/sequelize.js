@@ -1,7 +1,8 @@
 import config from "../utils/config";
+import Sequelize from "sequelize";
+import { DataTypes } from "sequelize";
 
 const userModel = require("../models/users");
-const { Sequelize } = require("sequelize");
 // const User = require(`${__dirname}/models/user`)(sequelize);
 
 const dialect = config.SEQUELIZE_DIALECT;
@@ -21,7 +22,7 @@ const sequelize = new Sequelize(database, username, password, {
   logging: false,
 });
 
-const User = userModel(sequelize, Sequelize);
+const User = userModel(sequelize, DataTypes);
 
 sequelize
   .sync({ alter: false })
